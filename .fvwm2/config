@@ -1,0 +1,130 @@
+DesktopSize 1x4
+DesktopName 0 World
+ClickTime 550
+EdgeThickness 0
+IgnoreModifiers L25
+OpaqueMoveSize unlimited
+
+SetEnv FONT_SMALL "xft:ar pl ukai cn:size=8"
+SetEnv FONT_NORMAL "xft:ar pl ukai cn:size=12"
+SetEnv FONT_MEDIUM "xft:ar pl ukai cn:size=14"
+SetEnv FONT_BIG "xft:ar pl ukai cn:size=16"
+
+Colorset 3 VGradient 256 3 Yellow 616 Green 4 Green 380 Yellow
+Colorset 6 HGradient 256 3 Yellow 616 Red 4 Red 380 Yellow
+
+DestroyMenu RootContextMenu
+AddToMenu RootContextMenu
+ + "XTerm" Exec exec xterm
+ + "FMConsole" Module FvwmConsole -terminal urxvt
+ + "" Nop
+ + "URxvt" Exec exec urxvt
+ + "FExplorer" Exec exec xfe
+ + "" Nop
+ + "ExitFvwm" Quit
+
+DestroyMenu WinTitleMenu
+AddToMenu WinTitleMenu
+ + "Minimize" Iconify
+ + "Maximize" Maximize
+ + "" Nop
+ + "Close" Close
+
+DestroyFunc StartFunction
+AddToFunc StartFunction
+ + I Module FvwmButtons MainPanel
+ + I Module FvwmTaskBar
+ + I Module FvwmAnimate
+ + I Exec exec xscreensaver -no-splash
+
+DestroyFunc ClickTitle
+AddToFunc ClickTitle
+ + I Raise
+ + D Maximize
+ + M Move
+
+DestroyFunc IconifyOrMove
+AddToFunc IconifyOrMove
+ + C Iconify
+ + M Move
+
+Mouse 1 2 A Close
+Mouse 1 4 A Maximize
+Mouse 1 6 A Iconify
+Mouse 1 I A IconifyOrMove
+Mouse 1 T A ClickTitle
+Mouse 3 R A Menu RootContextMenu
+Mouse 3 T A Menu WinTitleMenu
+Key L A CM Exec xscreensaver-command -lock
+Key D A CM All (Iconifiable, !Iconic) Iconify
+Key L A 4 Exec xscreensaver-command -lock
+Key D A 4 All (Iconifiable, !Iconic) Iconify
+Key M A 4 Move
+Key R A 4 Resize
+
+Style * Font "$[FONT_NORMAL]"
+Style * ClickToFocus, TitleAtLeft, !Handles, BorderWidth 4, !Icon
+#Style * SnapAttraction 5 All, SnapGrid 3 3
+
+Style Fvwm* !Title, WindowListSkip, Sticky, !Handles, BorderWidth 4, !Iconifiable
+Style FvwmConsole Title
+
+MenuStyle * Font "$[FONT_BIG]"
+MenuStyle * MenuFace VGradient 256 3 Yellow 126 Blue 4 Blue 126 Yellow
+
+DestroyModuleConfig *FvwmPager
+ *FvwmPager: Rows 1
+ *FvwmPager: Columns 1
+ *FvwmPager: Colorset 0 3
+ *FvwmPager: Hilight Gold
+ *FvwmPager: LabelsBelow
+ *FvwmPager: Font "$[FONT_MEDIUM]"
+ *FvwmPager: Geometry 60x200-0-0
+
+DestroyModuleConfig *FvwmTaskBar
+ *FvwmTaskBar: Geometry +0-0
+ *FvwmTaskBar: Rows 1
+ *FvwmTaskBar: Colorset 6
+ *FvwmTaskBar: UseSkipList
+ *FvwmTaskBar: DeskOnly
+ *FvwmTaskBar: ShowTips
+ *FvwmTaskBar: ClockFormat %H:%M:%S
+ *FvwmTaskBar: UpdateInterval 10
+ *FvwmTaskBar: WindowButtonsLeftMargin 120
+ *FvwmTaskBar: StartButtonRightMargin 80
+ *FvwmTaskBar: Button Title URxvt, Action (Mouse 1) Exec exec urxvt
+ *FvwmTaskBar: StartName Start
+ *FvwmTaskBar: Pad 5
+ *FvwmTaskBar: Action Click1 Iconify
+ *FvwmTaskBar: Action Click3 Menu WinTitleMenu
+ *FvwmTaskBar: Font "$[FONT_MEDIUM]"
+ *FvwmTaskBar: StatusFont "$[FONT_MEDIUM]"
+
+DestroyModuleConfig *FvwmAnimate
+ *FvwmAnimate: Delay 25
+ *FvwmAnimate: Effect Random
+ *FvwmAnimate: Width 3
+
+DestroyModuleConfig *MainPanel
+ *MainPanel: Geometry 60x400-0+0
+ *MainPanel: Columns 1
+ *MainPanel: Rows 9
+ *MainPanel: Colorset 3
+ *MainPanel: Frame 0
+ *MainPanel: Font "$[FONT_MEDIUM]"
+ *MainPanel: (1x1, Frame 2, Title URxvt, Action(Mouse 1) "Exec exec urxvt")
+ *MainPanel: (1x1, Frame 2, Title FExpl, Action(Mouse 1) "Exec exec xfe")
+ *MainPanel: (1x1, Frame 1, Title Evince, Action(Mouse 1) "Exec exec evince")
+ *MainPanel: (1x1, Frame 1, Title Web, Action(Mouse 1) "Exec exec firefox")
+ *MainPanel: (1x1, Frame 1, Title Mail, Action(Mouse 1) "Nop")
+ *MainPanel: (1x1, Frame 1, Title Quit, Action(Mouse 1) "Quit")
+ *MainPanel: (1x1, Frame 1, Title Halt, Action(Mouse 1) "Exec exec sudo poweroff")
+ *MainPanel: (1x1, Frame 1, Title Reboot, Action(Mouse 1) "Exec exec sudo reboot")
+ *MainPanel: (Panel (left, smooth, delay 20, steps 16, indicator, position Button top -4p 0p) FvwmPager "Module FvwmPager 0 0")
+# *MainPanel: (1x1, Frame 0, Action(Mouse 1) "Nop")
+# *MainPanel: (1x1, Frame 0, Icon earth_image.png, Action(Mouse 1) "Exec exec firefox")
+# *MainPanel: (1x1, Frame 0, Action(Mouse 1) "Nop")
+# *MainPanel: (1x1, Frame 0, Action(Mouse 1) "Nop")
+# *MainPanel: (1x1, Frame 0, Action(Mouse 1) "Nop")
+# *MainPanel: (1x1, Frame 0, Icon circle_image_double.png, Action(Mouse 1) "Exec exec sudo halt")
+# *MainPanel: (1x1, Frame 0, Icon circle_image_red.png, Action(Mouse 1) "Exec exec sudo reboot")
