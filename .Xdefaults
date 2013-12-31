@@ -1,0 +1,18 @@
+Vim*fontList : ar pl ukai cn
+URxvt.xft : true
+URxvt.font : xft:ar pl ukai cn:size=18
+URxvt.underlineColor : red
+URxvt.cursorColor : red
+URxvt.scrollColor : green
+URxvt.scrollstyle : plain
+URxvt.scrollBar_right : true
+URxvt.scrollBar_floating : true
+URxvt.scrollTtyOutput : false
+URxvt.scrollTtyKeypress : true
+URxvt.saveLines : 5000
+URxvt.thickness : 1
+URxvt.fading : 20
+URxvt.imLocale : zh_CN.UTF-8
+URxvt.preeditType : Root
+URxvt.inputMethod : fcitx
+URxvt.perl-ext-common : default,tabbed
