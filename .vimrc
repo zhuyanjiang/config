@@ -7,8 +7,8 @@ set fileencodings=ucs-bom,utf-8,cp936,latin1
 set guifont=AR\ PL\ UKAI\ CN\ 18
 set guioptions-=T
 
-let g:LookupFile_TagExpr = string('~/.filenametags')
-set tags+=~/tags
+"let g:LookupFile_TagExpr = string('~/.filenametags')
+"set tags+=~/tags
 "autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 "autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 let winManagerWindowLayout = 'FileExplorer|TagList'

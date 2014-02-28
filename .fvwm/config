@@ -115,7 +115,7 @@ DestroyModuleConfig *MainPanel
  *MainPanel: (1x1, Frame 2, Title URxvt, Action(Mouse 1) "Exec exec urxvt")
  *MainPanel: (1x1, Frame 2, Title FExpl, Action(Mouse 1) "Exec exec xfe")
  *MainPanel: (1x1, Frame 1, Title Evince, Action(Mouse 1) "Exec exec evince")
- *MainPanel: (1x1, Frame 1, Title Web, Action(Mouse 1) "Exec exec firefox")
+ *MainPanel: (1x1, Frame 1, Title Web, Action(Mouse 1) "Exec exec chromium")
  *MainPanel: (1x1, Frame 1, Title Mail, Action(Mouse 1) "Nop")
  *MainPanel: (1x1, Frame 1, Title Quit, Action(Mouse 1) "Quit")
  *MainPanel: (1x1, Frame 1, Title Halt, Action(Mouse 1) "Exec exec sudo poweroff")
