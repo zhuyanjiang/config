@@ -1,7 +1,7 @@
 #Colored output
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-export LESS=-R
+export LESS='-R -X'
 export LESS_TERMCAP_me=$(printf '\e[0m')
 export LESS_TERMCAP_se=$(printf '\e[0m')
 export LESS_TERMCAP_ue=$(printf '\e[0m')
