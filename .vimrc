@@ -3,6 +3,7 @@ set hlsearch
 syntax on
 filetype on
 filetype plugin on
+set nomore
 set fileencodings=ucs-bom,utf-8,cp936,latin1
 set guifont=AR\ PL\ UKAI\ CN\ 18
 set guioptions-=T
